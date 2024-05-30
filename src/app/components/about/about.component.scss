@@ -1,0 +1,45 @@
+@import "../../../styles/variables";
+
+.about {
+  display: flex;
+  gap: 20px;
+
+  .about-text {
+    flex: 2;
+    color: $lighter-slate;
+    font-weight: 400;
+  }
+
+  .about-technologies {
+    flex: 1;
+    z-index: 5;
+
+    h3 {
+      font-family: "Roboto Mono";
+      font-weight: 400;
+      color: $lightest-slate;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .icon-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+
+      .tech-icon {
+        svg {
+          width: 35px;
+          height: 35px;
+          fill: $lightest-slate !important;
+          transition: $transition;
+        }
+        &:hover svg {
+          fill: $main-clr !important;
+          transform: translateY(-3px);
+        }
+      }
+    }
+  }
+}

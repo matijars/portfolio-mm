@@ -1,0 +1,30 @@
+@import "../../../styles/variables";
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  padding: 0px 65px;
+  width: 100%;
+  height: $header-height;
+  background-color: rgba(31, 34, 52, 0.85);
+  box-shadow: 0 10px 30px -10px #111220;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+
+  ul {
+    display: flex;
+    gap: 20px;
+
+    a {
+      font-family: "Roboto Mono";
+      color: $lightest-slate;
+      transition: $transition;
+
+      &:hover {
+        color: $main-clr;
+      }
+    }
+  }
+}

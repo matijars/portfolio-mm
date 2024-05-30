@@ -1,0 +1,52 @@
+@import "../../../styles/variables";
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  margin: 0px 100px;
+  height: 100vh;
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 600px;
+
+    h1 {
+      font-family: "Roboto Mono";
+      color: $main-clr;
+      font-size: clamp($fz-sm, 5vw, $fz-md);
+    }
+
+    h2 {
+      color: $lightest-slate;
+    }
+
+    h3 {
+      color: $lighter-slate;
+      font-size: clamp($fz-lg, 5vw, $fz-heading);
+    }
+
+    p {
+      color: $lighter-slate;
+      font-weight: 400;
+    }
+  }
+
+  .portrait {
+    z-index: 5;
+    transition: $transition;
+    img {
+      width: 100%;
+      max-width: 300px;
+      min-width: 200px;
+      border: 1px solid $main-clr;
+      border-radius: 50%;
+    }
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
+}
