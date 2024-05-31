@@ -12,6 +12,13 @@ nav {
   box-shadow: 0 10px 30px -10px #111220;
   backdrop-filter: blur(10px);
   z-index: 10;
+  a {
+    display: flex;
+
+    img {
+      width: 60px;
+    }
+  }
 
   ul {
     display: flex;
@@ -21,6 +28,10 @@ nav {
       font-family: "Roboto Mono";
       color: $lightest-slate;
       transition: $transition;
+      padding: 10px;
+      &:last-child {
+        padding-right: 0;
+      }
 
       &:hover {
         color: $main-clr;

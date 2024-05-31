@@ -1,0 +1,51 @@
+@import "../../../styles/variables";
+
+.empleyment-tabs {
+  // max-width: 600px;
+  h3 {
+    font-size: $fz-lg;
+    color: $secondary-clr;
+  }
+
+  span {
+    display: inline-block;
+    font-size: $fz-xxs;
+    margin-bottom: 10px;
+  }
+
+  .project,
+  .responsibility {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 10px;
+
+    svg {
+      flex: 1;
+      max-width: 35px;
+      max-height: 35px;
+      margin-right: 10px;
+    }
+
+    p {
+      flex: 1;
+      font-size: $fz-xs;
+    }
+  }
+}
+
+::ng-deep .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+  color: $main-clr !important;
+}
+
+::ng-deep .mat-mdc-tab .mdc-tab-indicator__content--underline {
+  border-color: $main-clr !important;
+}
+
+::ng-deep .mat-mdc-tab .mdc-tab__text-label {
+  color: $lighter-slate !important;
+}
+
+::ng-deep .mat-mdc-tab-body {
+  padding: 20px 0px;
+}
