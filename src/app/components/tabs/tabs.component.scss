@@ -1,7 +1,8 @@
 @import "../../../styles/variables";
 
 .empleyment-tabs {
-  // max-width: 600px;
+  max-width: 700px;
+
   h3 {
     font-size: $fz-lg;
     color: $secondary-clr;
@@ -10,6 +11,7 @@
   span {
     display: inline-block;
     font-size: $fz-xxs;
+    font-family: "Roboto Mono";
     margin-bottom: 10px;
   }
 
@@ -48,4 +50,8 @@
 
 ::ng-deep .mat-mdc-tab-body {
   padding: 20px 0px;
+}
+
+::ng-deep .mat-mdc-tab-body-content {
+  overflow-y: hidden !important;
 }

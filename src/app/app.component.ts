@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { AboutComponent } from './components/about/about.component';
 import { EmploymentComponent } from './components/employment/employment.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,7 @@ import { EmploymentComponent } from './components/employment/employment.componen
     LandingComponent,
     AboutComponent,
     EmploymentComponent,
+    ProjectsComponent,
   ],
 })
 export class AppComponent {
