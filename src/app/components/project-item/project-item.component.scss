@@ -1,9 +1,75 @@
 @import "../../../styles/variables";
 
 .project-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   transition: $transition;
+  border: 1px solid $light-slate;
+  border-radius: 10px;
+  padding: 10px;
+  height: 100%;
 
   &:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
+
+    h3 svg {
+      rotate: 90deg;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+
+    h3 {
+      color: $secondary-clr;
+      font-family: "Roboto Mono";
+      font-size: $fz-md;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      svg {
+        transition: $transition;
+        width: 40px;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 25px !important;
+      height: 25px !important;
+
+      transition: $transition;
+
+      &:hover {
+        fill: $main-clr !important;
+      }
+    }
+  }
+
+  a {
+    display: flex;
+  }
+
+  p {
+    font-size: $fz-xs;
+  }
+
+  span {
+    display: inline-block;
+    font-size: $fz-xxs;
+    font-family: "Roboto Mono";
+    color: $lighter-slate;
+    margin: 20px 0px 10px 0px;
   }
 }

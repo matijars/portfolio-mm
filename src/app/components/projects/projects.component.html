@@ -1,9 +1,8 @@
 <section id="projects" class="projects">
   <h2 class="section-heading">My Projects</h2>
   <div class="projects-item-wrapper">
-    <app-project-item></app-project-item><app-project-item></app-project-item
-    ><app-project-item></app-project-item><app-project-item></app-project-item>
-    <app-project-item></app-project-item><app-project-item></app-project-item
-    ><app-project-item></app-project-item><app-project-item></app-project-item>
+    @for (project of projects; track $index) {
+    <app-project-item [project]="project" [index]="1">></app-project-item>
+    }
   </div>
 </section>

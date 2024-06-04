@@ -1,0 +1,46 @@
+@import "../../../styles/variables";
+
+.contact {
+  text-align: center;
+  max-width: 700px;
+  min-height: 500px;
+
+  &__text {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 30px;
+
+    p {
+      padding: 0px 20px;
+    }
+
+    svg {
+      width: 200px;
+
+      &:last-child {
+        transform: scaleX(-1);
+      }
+    }
+  }
+
+  a {
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid $secondary-clr;
+    padding: 10px 20px;
+    margin-top: 25px;
+    color: $secondary-clr;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Roboto Mono";
+    font-weight: 600;
+
+    transition: $transition;
+
+    &:hover {
+      transform: translateY(-3px);
+      color: $main-clr;
+      border-color: $main-clr;
+    }
+  }
+}

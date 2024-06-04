@@ -1,0 +1,11 @@
+@import "../../../styles/variables";
+p {
+  text-align: center;
+  font-family: "Roboto Mono";
+  font-size: $fz-xs;
+  color: $lighter-slate;
+}
+
+span {
+  margin: 0 auto;
+}
