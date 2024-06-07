@@ -13,14 +13,6 @@ nav {
   backdrop-filter: blur(10px);
   z-index: 10;
 
-  .hamburger {
-    display: none;
-
-    @include respond-to("md") {
-      display: block;
-    }
-  }
-
   .nav-links-sm {
     position: fixed;
     display: none;
@@ -113,4 +105,71 @@ nav ul a:last-child {
 
 nav ul a:hover {
   color: $main-clr;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+
+  @include respond-to("md") {
+    display: flex;
+  }
+
+  &::before,
+  &::after,
+  span {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: $lightest-slate;
+    transition: $transition;
+  }
+
+  &::before {
+    position: absolute;
+    top: 6px;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: 6px;
+  }
+
+  span {
+    position: absolute;
+  }
+
+  &.active {
+    &::before {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    &::after {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    span {
+      opacity: 0;
+    }
+  }
+
+  &:hover,
+  &.active {
+    &::before,
+    &::after,
+    span {
+      background-color: $main-clr;
+    }
+  }
 }

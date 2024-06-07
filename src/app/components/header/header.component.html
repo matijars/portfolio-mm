@@ -1,6 +1,8 @@
 <nav @slideInFromTop [class.open]="menuOpen">
   <a href="#hero"><img src="../../../assets/socials/logo.png" alt="Logo" /></a>
-  <button class="hamburger" (click)="toggleMenu()">X</button>
+  <button class="hamburger" [class.active]="menuOpen" (click)="toggleMenu()">
+    <span></span>
+  </button>
   <div class="nav-links-sm" [class.active]="menuOpen">
     <a href="#about" (click)="closeMenu()">About</a>
     <a href="#employment" (click)="closeMenu()">Employment</a>

@@ -1,11 +1,17 @@
 @import "../../../styles/variables";
 @import "../../../styles/mixins";
 
+:host {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
 .hero {
   display: flex;
   align-items: center;
   gap: 100px;
-  height: 100vh;
+  height: 100%;
   opacity: 0;
   animation: fadeIn 1s ease-in-out 2.6s forwards;
 
