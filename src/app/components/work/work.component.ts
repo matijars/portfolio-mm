@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { TabsComponent } from '../tabs/tabs.component';
 
 @Component({
-  selector: 'app-employment',
+  selector: 'app-work',
   standalone: true,
-  templateUrl: './employment.component.html',
-  styleUrl: './employment.component.scss',
+  templateUrl: './work.component.html',
+  styleUrl: './work.component.scss',
   imports: [TabsComponent],
 })
-export class EmploymentComponent {}
+export class WorkComponent {}

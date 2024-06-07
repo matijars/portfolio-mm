@@ -5,7 +5,7 @@ import { SocialsComponent } from './components/socials/socials.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { AboutComponent } from './components/about/about.component';
-import { EmploymentComponent } from './components/employment/employment.component';
+import { WorkComponent } from './components/work/work.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { ContactComponent } from './components/contact/contact.component';
@@ -23,7 +23,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HeaderComponent,
     LandingComponent,
     AboutComponent,
-    EmploymentComponent,
+    WorkComponent,
     ProjectsComponent,
     SafeHtmlPipe,
     ContactComponent,
