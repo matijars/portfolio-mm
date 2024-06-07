@@ -1,0 +1,7 @@
+{
+  "hosting": {
+    "site": "milosevicmatija",
+    "public": "dist/portfolio-mm/browser",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
+}
