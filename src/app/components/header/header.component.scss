@@ -13,62 +13,6 @@ nav {
   backdrop-filter: blur(10px);
   z-index: 10;
 
-  .nav-links-sm {
-    position: fixed;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    top: 90px;
-    right: -100%;
-    width: 100%;
-    height: calc(100vh - 50px);
-    background-color: rgba(31, 34, 52, 0.85);
-    transition: right 0.3s ease-in-out;
-    gap: 50px;
-
-    z-index: 77;
-
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Roboto Mono";
-      font-weight: 600;
-      color: $lightest-slate;
-      transition: $transition;
-      width: 100%;
-
-      &:hover {
-        color: $main-clr;
-      }
-    }
-
-    &.active {
-      right: 0;
-    }
-
-    .nav-links-socials {
-      li {
-        svg {
-          width: 26px;
-          height: 26px;
-          fill: $lightest-slate !important;
-          transition: $transition;
-        }
-
-        &:hover svg {
-          fill: $main-clr !important;
-          transform: translateY(-3px);
-        }
-      }
-    }
-
-    @include respond-to("md") {
-      display: flex;
-    }
-  }
-
   .nav-links {
     display: flex;
     gap: 20px;
@@ -105,6 +49,66 @@ nav ul a:last-child {
 
 nav ul a:hover {
   color: $main-clr;
+}
+
+.nav-links-sm {
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 90px;
+  right: -100%;
+  width: 100%;
+  height: calc(100vh - 50px);
+  background-color: rgba(31, 34, 52, 0.85);
+  backdrop-filter: blur(10px);
+  transition: right 0.3s ease-in-out;
+  gap: 50px;
+  z-index: 10;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto Mono";
+    font-weight: 600;
+    color: $lightest-slate;
+    transition: $transition;
+    width: 100%;
+
+    &:hover {
+      color: $main-clr;
+    }
+  }
+
+  &.active {
+    right: 0;
+  }
+
+  .nav-links-socials {
+    ul {
+      display: flex;
+      gap: 30px;
+      li {
+        svg {
+          width: 26px;
+          height: 26px;
+          fill: $lightest-slate !important;
+          transition: $transition;
+        }
+
+        &:hover svg {
+          fill: $main-clr !important;
+          transform: translateY(-3px);
+        }
+      }
+    }
+  }
+
+  @include respond-to("md") {
+    display: flex;
+  }
 }
 
 .hamburger {
