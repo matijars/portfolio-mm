@@ -1,10 +1,13 @@
 @import "../../../styles/variables";
+@import "../../../styles/mixins";
 
 .hero {
   display: flex;
   align-items: center;
   gap: 100px;
   height: 100vh;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 2.6s forwards;
 
   .text {
     display: flex;
@@ -28,7 +31,8 @@
     }
 
     p {
-      color: $lighter-slate;
+      color: $lightest-slate;
+      font-size: $fz-sm;
       font-weight: 400;
     }
   }
@@ -46,5 +50,28 @@
     &:hover {
       scale: 1.05;
     }
+  }
+
+  @include respond-to("md") {
+    flex-direction: column;
+    padding-top: 200px;
+
+    .text {
+      text-align: center;
+    }
+
+    .portrait img {
+      width: 200px;
+    }
+  }
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

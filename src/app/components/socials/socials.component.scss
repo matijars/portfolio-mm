@@ -1,14 +1,25 @@
 @import "../../../styles/variables";
+@import "../../../styles/mixins";
 
 .left,
 .right {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  margin-left: 50px;
+
+  @include respond-to("md") {
+    display: none;
+  }
 }
 
 .left {
+  transform: translateX(-100%) translateY(-50%);
+  margin-left: 50px;
+  animation: slideInFromLeft 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+  animation-delay: 2.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+
   &::after {
     content: "";
     position: absolute;
@@ -55,8 +66,14 @@
   writing-mode: vertical-rl;
   margin-right: 50px;
   right: 0;
+  opacity: 0;
+  animation: slideInFromRight 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+    forwards;
+  animation-delay: 2.5s;
+  animation-fill-mode: forwards;
 
   a {
+    color: $lightest-slate;
     font-size: $fz-xxs;
     letter-spacing: 0.2em;
     transition: $transition;
@@ -66,5 +83,25 @@
       color: $main-clr !important;
       padding-bottom: 8px;
     }
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%) translateY(-50%);
+  }
+  100% {
+    transform: translateX(0) translateY(-50%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%) translateY(-50%);
+  }
+  100% {
+    transform: translateX(0) translateY(-50%);
+    opacity: 1;
   }
 }

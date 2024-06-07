@@ -30,6 +30,4 @@ import { FooterComponent } from './components/footer/footer.component';
     FooterComponent,
   ],
 })
-export class AppComponent {
-  title = 'portfolio-mm';
-}
+export class AppComponent {}

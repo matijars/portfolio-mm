@@ -18,8 +18,17 @@ $fz-lg: 18px;
 $fz-xl: 20px;
 $fz-xxl: 22px;
 $fz-heading: 32px;
+
 $border-radius: 4px;
 $nav-height: 100px;
 $nav-scroll-height: 70px;
 $tab-height: 42px;
 $tab-width: 120px;
+
+$breakpoints: (
+  "xs": 0,
+  "sm": 576px,
+  "md": 760px,
+  "lg": 992px,
+  "xl": 1200px,
+);
