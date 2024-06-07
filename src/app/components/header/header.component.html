@@ -1,5 +1,11 @@
 <nav @slideInFromTop [class.open]="menuOpen">
   <a href="#hero"><img src="../../../assets/socials/logo.png" alt="Logo" /></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#employment">Employment</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
   <button class="hamburger" [class.active]="menuOpen" (click)="toggleMenu()">
     <span></span>
   </button>
@@ -62,9 +68,3 @@
     </ul>
   </div>
 </div>
-<ul class="nav-links">
-  <li><a href="#about">About</a></li>
-  <li><a href="#employment">Employment</a></li>
-  <li><a href="#projects">Projects</a></li>
-  <li><a href="#contact">Contact</a></li>
-</ul>

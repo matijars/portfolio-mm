@@ -21,6 +21,10 @@ nav {
       display: none;
     }
   }
+
+  @include respond-to("md") {
+    padding: 0px 45px;
+  }
 }
 
 nav a {
@@ -29,6 +33,10 @@ nav a {
 
 nav a img {
   width: 60px;
+
+  @include respond-to("md") {
+    width: 50px;
+  }
 }
 
 nav ul {
@@ -90,6 +98,7 @@ nav ul a:hover {
     ul {
       display: flex;
       gap: 30px;
+
       li {
         svg {
           width: 26px;

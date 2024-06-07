@@ -11,9 +11,9 @@
   display: flex;
   align-items: center;
   gap: 100px;
-  height: 100%;
   opacity: 0;
   animation: fadeIn 1s ease-in-out 2.6s forwards;
+  margin-top: -45px;
 
   .text {
     display: flex;
@@ -38,7 +38,7 @@
 
     p {
       color: $lightest-slate;
-      font-size: $fz-sm;
+      font-size: $fz-md;
       font-weight: 400;
     }
   }
@@ -60,7 +60,7 @@
 
   @include respond-to("md") {
     flex-direction: column;
-    padding-top: 200px;
+    margin-top: 45px;
 
     .text {
       text-align: center;
