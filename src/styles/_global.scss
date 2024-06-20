@@ -100,3 +100,22 @@ a {
   border-top: 1px solid $secondary-clr;
   margin: 0px 45px 10px 45px;
 }
+
+// Scrollbar
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: $dark-slate;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $light-slate;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $lighter-slate;
+}
