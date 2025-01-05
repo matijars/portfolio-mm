@@ -13,6 +13,9 @@
   }
 
   .about-technologies {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     flex: 1;
 
     h3 {
@@ -25,9 +28,9 @@
 
     .icon-wrapper {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      margin-bottom: 10px;
+      gap: 25px;
 
       .tech-icon {
         svg {
