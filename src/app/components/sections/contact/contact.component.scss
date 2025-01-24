@@ -35,25 +35,4 @@
       }
     }
   }
-
-  a {
-    display: inline-block;
-    background-color: transparent;
-    border: 1px solid $secondary-clr;
-    padding: 10px 20px;
-    margin-top: 25px;
-    color: $secondary-clr;
-    border-radius: 10px;
-    cursor: pointer;
-    font-family: "Roboto Mono";
-    font-weight: 600;
-
-    transition: $transition;
-
-    &:hover {
-      transform: translateY(-3px);
-      color: $main-clr;
-      border-color: $main-clr;
-    }
-  }
 }
