@@ -1,0 +1,22 @@
+<div class="project-item">
+  <div class="project-item__header">
+    <h3>
+      <div [innerHTML]="project.icon | safeHtml"></div>
+      {{ project.title }}
+    </h3>
+    <div class="project-item__links">
+      <a
+        [href]="project.links.github.url"
+        target="_blank"
+        [innerHTML]="project.links.github.svg | safeHtml"
+      ></a>
+      <a
+        [href]="project.links.liveDemo.url"
+        target="_blank"
+        [innerHTML]="project.links.liveDemo.svg | safeHtml"
+      ></a>
+    </div>
+  </div>
+  <p>{{ project.description }}</p>
+  <span>{{ project.technologies.join(" ") }}</span>
+</div>

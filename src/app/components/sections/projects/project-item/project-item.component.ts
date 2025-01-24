@@ -1,6 +1,6 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { ProjectInterface } from '../../models/project.model';
-import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
+import { ProjectInterface } from '../../../../models/project.model';
+import { SafeHtmlPipe } from '../../../../pipes/safe-html.pipe';
 
 @Component({
   selector: 'app-project-item',

@@ -1,5 +1,5 @@
 import { Component, inject, ViewEncapsulation } from '@angular/core';
-import { TECH_ICONS } from '../../data/tech-icons';
+import { TECH_ICONS } from '../../../data/tech-icons';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
