@@ -1,3 +1,4 @@
+@if(!error) { @if (!loading) {
 <div class="table-container">
   <table mat-table [dataSource]="repositories">
     <ng-container matColumnDef="name">
@@ -27,3 +28,8 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 </div>
+} @else {
+<app-loader></app-loader>
+} } @else {
+<p class="error-msg">{{ error }}</p>
+}

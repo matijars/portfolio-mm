@@ -4,22 +4,13 @@ import { MatTableModule } from '@angular/material/table';
 import { GithubService } from '../../services/github.service';
 import { IconLinkComponent } from '../../components/shared/icon-link/icon-link.component';
 import { ProjectInterface } from '../../models/project.model';
-
-interface Repository {
-  id: string;
-  name: string;
-  created_at: string;
-  html_url: string;
-  homepage: string;
-  description: string;
-  topics: string[];
-}
+import { LoaderComponent } from '../../components/shared/loader/loader.component';
 
 @Component({
   selector: 'app-projects-page',
   standalone: true,
   providers: [GithubService],
-  imports: [CommonModule, MatTableModule, IconLinkComponent],
+  imports: [CommonModule, MatTableModule, IconLinkComponent, LoaderComponent],
   templateUrl: './projects-page.component.html',
   styleUrl: './projects-page.component.scss',
 })
@@ -35,28 +26,15 @@ export class ProjectsPageComponent {
     this.fetchRepositories();
   }
 
-  // Method to fetch repositories
   fetchRepositories(): void {
     this.githubService.getRepositories().subscribe({
       next: (data: ProjectInterface[]) => {
-        // Handle the successful data emission
-
         this.repositories = data;
-        console.log(this.repositories);
         this.loading = false;
-        if (data.length === 0) {
-          // this.error = 'No repositories found.';
-        }
       },
       error: (err) => {
-        // Handle errors
-        this.error = `Failed to load repositories: ${err.message}`;
+        this.error = `${err.error.message}`;
         this.loading = false;
-        // console.error('Error fetching repositories:', err);
-      },
-      complete: () => {
-        // Handle completion
-        // console.log('Repository fetch complete');
       },
     });
   }

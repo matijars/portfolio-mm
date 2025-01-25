@@ -101,6 +101,12 @@ a {
   margin: 0px 45px 10px 45px;
 }
 
+.error-msg {
+  max-width: 500px;
+  text-align: center;
+  color: $danger-clr;
+}
+
 // Scrollbar
 
 ::-webkit-scrollbar {

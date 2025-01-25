@@ -4,6 +4,7 @@ import { ProjectInterface } from '../../../models/project.model';
 import { ButtonComponent } from '../../shared/button/button.component';
 import { RouterModule } from '@angular/router';
 import { GithubService } from '../../../services/github.service';
+import { LoaderComponent } from '../../shared/loader/loader.component';
 
 @Component({
   selector: 'app-projects',
@@ -11,7 +12,12 @@ import { GithubService } from '../../../services/github.service';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
   providers: [GithubService],
-  imports: [ProjectItemComponent, ButtonComponent, RouterModule],
+  imports: [
+    ProjectItemComponent,
+    ButtonComponent,
+    RouterModule,
+    LoaderComponent,
+  ],
 })
 export class ProjectsComponent implements OnInit {
   projects: ProjectInterface[] = [];
@@ -23,11 +29,9 @@ export class ProjectsComponent implements OnInit {
     this.fetchRepositories();
   }
 
-  // Method to fetch repositories
   fetchRepositories(): void {
     this.githubService.getRepositories().subscribe({
       next: (data: ProjectInterface[]) => {
-        // Filter the repositories by the specific IDs
         const desiredIds = [
           181189194, 732711102, 324826157, 181188048, 220041575, 181186765,
         ];
@@ -35,22 +39,11 @@ export class ProjectsComponent implements OnInit {
           desiredIds.includes(project.id)
         );
 
-        console.log(this.projects);
         this.loading = false;
-
-        if (this.projects.length === 0) {
-          // this.error = 'No repositories found.';
-        }
       },
       error: (err) => {
-        // Handle errors
-        this.error = `Failed to load repositories: ${err.message}`;
+        this.error = `${err.error.message}`;
         this.loading = false;
-        // console.error('Error fetching repositories:', err);
-      },
-      complete: () => {
-        // Handle completion
-        // console.log('Repository fetch complete');
       },
     });
   }

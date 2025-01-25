@@ -1,5 +1,6 @@
 <section id="projects" class="projects">
   <h2 class="section-heading">My Projects</h2>
+  @if (!error) { @if(loading) {
   <div class="projects-item-wrapper">
     @for (project of projects; track $index) {
     <app-project-item [project]="project" [index]="1">></app-project-item>
@@ -9,4 +10,9 @@
   <a [routerLink]="'/projects'">
     <app-button label="All projects"></app-button>
   </a>
+  }@else {
+  <app-loader></app-loader>
+  } } @else {
+  <p class="error-msg">{{ error }}</p>
+  }
 </section>
