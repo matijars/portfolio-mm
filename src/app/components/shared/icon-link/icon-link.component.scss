@@ -1,0 +1,16 @@
+@import "../../../../styles/variables";
+
+.icon-link {
+  display: flex;
+
+  svg {
+    width: 25px;
+    height: 25px;
+
+    transition: $transition;
+
+    &:hover {
+      fill: $main-clr;
+    }
+  }
+}

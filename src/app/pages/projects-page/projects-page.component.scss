@@ -1,0 +1,52 @@
+@import "../../../styles/variables";
+
+.table-container {
+  max-height: 475px;
+  overflow-y: auto;
+  margin: 0px 95px;
+  width: 700px;
+}
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+
+  table {
+    background-color: $dark-slate;
+
+    .mat-mdc-header-row {
+      position: sticky;
+      top: 0;
+      color: $secondary-clr;
+
+      .mat-mdc-header-cell {
+        border-bottom: 1px solid $lightest-slate;
+      }
+    }
+
+    .mat-mdc-row {
+      transition: $transition;
+      .mat-mdc-cell {
+        border-bottom-color: $light-slate;
+      }
+
+      &:hover {
+        background-color: $light-slate;
+      }
+
+      .mat-column-actions {
+        display: flex;
+        height: inherit;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+
+    .mat-mdc-cell {
+      color: $lightest-slate;
+    }
+  }
+}

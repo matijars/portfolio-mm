@@ -1,13 +1,29 @@
-<p>projects-page works!</p>
-<p>projects-page works!</p>
-<p>projects-page works!</p>
-<p>projects-page works!</p>
-<p>projects-page works!</p>
-<p>projects-page works!</p>
-<p>projects-page works!</p>
-<p>projects-page works!</p>
-<p>projects-page works!</p>
-<p>projects-page works!</p>
-<p>projects-page works!</p>
+<div class="table-container">
+  <table mat-table [dataSource]="repositories">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
 
-<p>projects-page works!</p>
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.created_at | date }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <app-icon-link
+          [url]="element.html_url"
+          iconName="github"
+        ></app-icon-link>
+        <app-icon-link [url]="element.homepage" iconName="eye"></app-icon-link>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

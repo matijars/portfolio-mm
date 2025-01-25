@@ -44,21 +44,6 @@
     gap: 10px;
     align-items: center;
     justify-content: center;
-
-    svg {
-      width: 25px !important;
-      height: 25px !important;
-
-      transition: $transition;
-
-      &:hover {
-        fill: $main-clr !important;
-      }
-    }
-  }
-
-  a {
-    display: flex;
   }
 
   p {
