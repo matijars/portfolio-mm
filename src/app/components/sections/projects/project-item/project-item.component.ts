@@ -2,6 +2,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { ProjectInterface } from '../../../../models/project.model';
 import { SafeHtmlPipe } from '../../../../pipes/safe-html.pipe';
 import { IconLinkComponent } from '../../../shared/icon-link/icon-link.component';
+import { FILE_ICON } from '../../../../../assets/svg/svg-icons';
 
 @Component({
   selector: 'app-project-item',
@@ -14,4 +15,6 @@ import { IconLinkComponent } from '../../../shared/icon-link/icon-link.component
 export class ProjectItemComponent {
   @Input() project!: ProjectInterface;
   @Input() index!: number;
+
+  fileIcon = FILE_ICON;
 }

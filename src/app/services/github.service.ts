@@ -1,14 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-interface Repository {
-  name: string;
-  created_at: string;
-  html_url: string;
-  homepage: string;
-  description: string;
-  topics: string[];
-}
+import { ProjectInterface } from '../models/project.model';
 
 @Injectable({
   providedIn: 'root',
@@ -17,10 +10,11 @@ export class GithubService {
   http = inject(HttpClient);
   private apiUrl = 'https://api.github.com/users/matijars/repos'; // GitHub API URL
 
-  getRepositories(): Observable<Repository[]> {
-    return this.http.get<Repository[]>(this.apiUrl).pipe(
+  getRepositories(): Observable<ProjectInterface[]> {
+    return this.http.get<ProjectInterface[]>(this.apiUrl).pipe(
       map((repos) =>
         repos.map((repo) => ({
+          id: repo.id,
           name: repo.name,
           created_at: repo.created_at,
           html_url: repo.html_url,

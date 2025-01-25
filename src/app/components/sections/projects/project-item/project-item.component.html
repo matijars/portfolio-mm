@@ -1,20 +1,14 @@
 <div class="project-item">
   <div class="project-item__header">
     <h3>
-      <div [innerHTML]="project.icon | safeHtml"></div>
-      {{ project.title }}
+      <div [innerHTML]="fileIcon | safeHtml"></div>
+      {{ project.name }}
     </h3>
     <div class="project-item__links">
-      <app-icon-link
-        [url]="project.links.github.url"
-        iconName="github"
-      ></app-icon-link>
-      <app-icon-link
-        [url]="project.links.liveDemo.url"
-        iconName="eye"
-      ></app-icon-link>
+      <app-icon-link [url]="project.html_url" iconName="github"></app-icon-link>
+      <app-icon-link [url]="project.homepage" iconName="eye"></app-icon-link>
     </div>
   </div>
   <p>{{ project.description }}</p>
-  <span>{{ project.technologies.join(" ") }}</span>
+  <span>{{ project.topics.join(" ") }}</span>
 </div>

@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, ViewEncapsulation } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { GithubService } from '../../services/github.service';
 import { IconLinkComponent } from '../../components/shared/icon-link/icon-link.component';
+import { ProjectInterface } from '../../models/project.model';
 
 interface Repository {
+  id: string;
   name: string;
   created_at: string;
   html_url: string;
@@ -25,7 +27,7 @@ export class ProjectsPageComponent {
   githubService = inject(GithubService);
 
   displayedColumns: string[] = ['name', 'date', 'actions'];
-  repositories: Repository[] = [];
+  repositories: ProjectInterface[] = [];
   loading: boolean = true;
   error: string = '';
 
@@ -36,7 +38,7 @@ export class ProjectsPageComponent {
   // Method to fetch repositories
   fetchRepositories(): void {
     this.githubService.getRepositories().subscribe({
-      next: (data: Repository[]) => {
+      next: (data: ProjectInterface[]) => {
         // Handle the successful data emission
 
         this.repositories = data;

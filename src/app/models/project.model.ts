@@ -1,16 +1,9 @@
 export interface ProjectInterface {
-  icon: string;
-  title: string;
+  id: number;
+  name: string;
+  created_at: string;
+  html_url: string;
+  homepage: string;
   description: string;
-  technologies: string[];
-  links: {
-    github: Link;
-    liveDemo: Link;
-  };
-}
-
-export interface Link {
-  url: string;
-  svg: string;
-  text: string;
+  topics: string[];
 }
