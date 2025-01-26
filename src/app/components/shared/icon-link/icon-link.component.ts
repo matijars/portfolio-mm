@@ -15,6 +15,7 @@ export class IconLinkComponent {
   @Input() url: string = '';
 
   private icons = {
+    none: '',
     github: GITHUB_ICON,
     eye: EYE_ICON,
   };

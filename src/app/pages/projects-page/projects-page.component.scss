@@ -1,10 +1,15 @@
 @import "../../../styles/variables";
+@import "../../../styles/mixins";
 
 .table-container {
   max-height: 475px;
   overflow-y: auto;
   margin: 0px 95px;
   width: 700px;
+
+  @include respond-to("md") {
+    margin: 0px 30px;
+  }
 }
 
 :host {
@@ -37,7 +42,7 @@
         background-color: $light-slate;
       }
 
-      .mat-column-actions {
+      .mat-column-links {
         display: flex;
         height: inherit;
         align-items: center;
