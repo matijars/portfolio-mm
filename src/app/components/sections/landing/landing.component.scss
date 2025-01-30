@@ -11,8 +11,10 @@
   display: flex;
   align-items: center;
   gap: 100px;
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out 1.6s forwards;
+
+  // Commented out animation for better navigation
+  // opacity: 0;
+  // animation: fadeIn 1s ease-in-out 1.6s forwards;
   margin-top: -45px;
 
   .text {

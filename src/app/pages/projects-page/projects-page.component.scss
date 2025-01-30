@@ -1,15 +1,18 @@
 @import "../../../styles/variables";
 @import "../../../styles/mixins";
 
-.table-container {
-  max-height: 475px;
-  overflow-y: auto;
+.projects-page {
   margin: 0px 95px;
   width: 700px;
 
   @include respond-to("md") {
     margin: 0px 30px;
   }
+}
+
+.table-container {
+  overflow-y: auto;
+  max-height: 475px;
 }
 
 :host {

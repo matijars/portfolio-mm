@@ -1,21 +1,30 @@
 <nav @slideInFromTop [class.open]="menuOpen">
-  <a href="#hero"><img src="../../../assets/socials/logo.png" alt="Logo" /></a>
+  <a href="/"><img src="../../../assets/socials/logo.png" alt="Logo" /></a>
+  @if(isHomePage) {
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li [class.active]="isInViewport('hero')"><a href="#hero">Hi!</a></li>
+    <li [class.active]="isInViewport('about')"><a href="#about">About</a></li>
+    <li [class.active]="isInViewport('work')"><a href="#work">Work</a></li>
+    <li [class.active]="isInViewport('projects')">
+      <a href="#projects">Projects</a>
+    </li>
+    <li [class.active]="isInViewport('contact')">
+      <a href="#contact">Contact</a>
+    </li>
   </ul>
+  }
   <button class="hamburger" [class.active]="menuOpen" (click)="toggleMenu()">
     <span></span>
   </button>
 </nav>
 <div class="nav-links-sm" [class.active]="menuOpen">
+  @if(isHomePage) {
+  <a href="#hero" (click)="closeMenu()">Hi!</a>
   <a href="#about" (click)="closeMenu()">About</a>
   <a href="#work" (click)="closeMenu()">Work</a>
   <a href="#projects" (click)="closeMenu()">Projects</a>
   <a href="#contact" (click)="closeMenu()">Contact</a>
-
+  }
   <div class="nav-links-socials">
     <ul>
       <li>

@@ -2,7 +2,6 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ProjectItemComponent } from './project-item/project-item.component';
 import { ProjectInterface } from '../../../models/project.model';
 import { ButtonComponent } from '../../shared/button/button.component';
-import { RouterModule } from '@angular/router';
 import { GithubService } from '../../../services/github.service';
 import { LoaderComponent } from '../../shared/loader/loader.component';
 
@@ -12,12 +11,7 @@ import { LoaderComponent } from '../../shared/loader/loader.component';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
   providers: [GithubService],
-  imports: [
-    ProjectItemComponent,
-    ButtonComponent,
-    RouterModule,
-    LoaderComponent,
-  ],
+  imports: [ProjectItemComponent, ButtonComponent, LoaderComponent],
 })
 export class ProjectsComponent implements OnInit {
   projects: ProjectInterface[] = [];

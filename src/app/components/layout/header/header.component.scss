@@ -25,6 +25,11 @@ nav {
   @include respond-to("md") {
     padding: 0px 45px;
   }
+
+  .nav-links .active a {
+    color: $main-clr;
+    font-weight: bold;
+  }
 }
 
 nav a {
@@ -66,6 +71,7 @@ nav ul a:hover {
   align-items: center;
   justify-content: center;
   top: 90px;
+  padding-bottom: 90px;
   right: -100%;
   width: 100%;
   height: calc(100vh - 50px);

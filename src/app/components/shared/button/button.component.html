@@ -1,1 +1,5 @@
-<button>{{ label }}</button>
+@if(routerLink) {
+<a [routerLink]="routerLink">
+  <button>{{ label }}</button></a
+>
+} @else { <button>{{ label }}</button>}
