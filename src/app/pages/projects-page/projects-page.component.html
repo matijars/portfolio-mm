@@ -33,7 +33,10 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
   </div>
-  <app-button label="Back to home" [routerLink]="'/'"></app-button>
+
+  <a id="back-btn" href="/">
+    <app-button label="Back to home"></app-button>
+  </a>
 </div>
 }
 

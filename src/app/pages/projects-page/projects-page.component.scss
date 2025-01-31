@@ -8,6 +8,12 @@
   @include respond-to("md") {
     margin: 0px 30px;
   }
+
+  #back-btn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+  }
 }
 
 .table-container {
@@ -19,7 +25,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  padding: 120px 0px 40px 0px;
+  min-height: 100vh;
   width: 100%;
 
   table {
